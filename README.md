@@ -138,6 +138,45 @@
 6. **Reduce Attempt Count**:
    - After each guess, reduce `i` by `1`.
    - If `i` reaches `0`, display a message indicating that the user is out of attempts and end the game.
+  
+
+# PROJECT TITLE: High-Low Guessing Game (Project Number: 5)
+
+## Algorithm
+
+1. **Initialize Game**:
+   - Set a variable `game` to `True` to keep the main game loop running.
+   - Initialize a variable `i` to `0` to keep track of the player’s score.
+
+2. **Define Function for Guessing**:
+   - Create a function `highlow(a_dict, b_dict, i)` that:
+     - Prompts the player to guess which option has more followers, either `A` or `B`.
+     - Based on the player’s choice, sets the `guess` variable to `a_dict` or `b_dict`, and the `other` variable to the remaining choice.
+     - Calls the `guessing` function to verify the player’s guess.
+
+3. **Main Game Loop**:
+   - Import the data from `day_14_data`.
+   - Randomly select a data item (`a_dict`) and display its name, description, and country.
+   - Randomly select a second data item (`b_dict`) and check that it’s not the same as `a_dict`.
+   - Display the details for both choices: "Compare A" and "Against B".
+   - Prompt the player to guess which item has more followers, either `A` or `B`.
+   - Based on the guess, set the variables `guess` and `other` and call the `guessing` function.
+
+4. **Define Guess Validation Function**:
+   - Create a function `guessing(guess, other, i)` that:
+     - Compares the follower count of `guess` and `other`.
+     - If the guess is correct (i.e., `guess["follower_count"] >= other["follower_count"]`):
+       - Increment the score (`i`), display the updated score, and randomly select a new `b_dict` to compare against.
+       - Display details of the new pair and call `highlow` again with the updated score.
+     - If the guess is incorrect:
+       - Display the final score.
+       - Ask if the player wants to play again:
+         - If yes, return `True` to restart the game.
+         - If no, display a thank-you message and return `False` to end the game.
+
+5. **Run the Game**:
+   - Start the game loop with `game=guessing(guess, other, i)`, allowing the player to continue guessing until they choose to stop.
+
 
 
 
