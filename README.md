@@ -109,3 +109,35 @@
    - Display the final result based on conditions, and ask the player if they’d like to start a new game.
 
 
+# PROJECT TITLE: Number Guessing Game (Project Number: 4)
+
+## Algorithm
+
+1. **Welcome Message**:
+   - Display a welcome message introducing the number guessing game.
+
+2. **Select Difficulty Level**:
+   - Prompt the user to select a difficulty level: `'easy'` or `'hard'`.
+   - If the user selects `easy`, set `attempts` to `10`.
+   - If the user selects `hard`, set `attempts` to `5`.
+
+3. **Generate Random Number**:
+   - Generate a random number between `1` and `10` (inclusive) as the target number for the user to guess.
+
+4. **Start Guessing Loop**:
+   - Set a variable `i` to the number of `attempts`.
+   - While `i` is greater than `0`, do the following:
+     - Display the number of remaining attempts.
+     - Prompt the user to make a guess (`guess_number`).
+
+5. **Check Guess**:
+   - If the user’s guess is equal to the `random_number`, print a success message indicating that they guessed the correct number, and break the loop.
+   - If the user’s guess is lower than the `random_number`, inform the user with a message “Too low” and ask them to guess again.
+   - If the user’s guess is higher than the `random_number`, inform the user with a message “Too high” and ask them to guess again.
+
+6. **Reduce Attempt Count**:
+   - After each guess, reduce `i` by `1`.
+   - If `i` reaches `0`, display a message indicating that the user is out of attempts and end the game.
+
+
+
