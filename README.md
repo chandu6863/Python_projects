@@ -27,3 +27,39 @@
 
 6. **Play Again Option** (Optional):
    - After showing the result, prompt the user if they want to continue. If yes, restart the process; otherwise, end the program.
+
+
+
+# PROJECT TITLE: Basic Calculator (Project Number: 2)
+
+## Algorithm
+
+1. **Initialize Calculation**:
+   - Prompt the user to enter the first number (`first_num`).
+   - Display available operations: `+`, `-`, `*`, and `/`.
+   - Ask the user to choose an operation (`operation`).
+   - Prompt the user to enter the second number (`second_num`).
+
+2. **Define the Calculation Function**:
+   - Create a function named `calculator(a, b, operation)` to perform the arithmetic operation on `a` and `b`:
+     - If `operation` is `+`, calculate `a + b`.
+     - If `operation` is `-`, calculate `a - b`.
+     - If `operation` is `*`, calculate `a * b`.
+     - If `operation` is `/`, calculate `a / b`.
+   - Print the result of the calculation.
+
+3. **Continue or Restart Calculation**:
+   - Ask the user if they want to continue with the current result:
+     - If the user enters `"y"`, set `calculation_continue = True` to continue using the current result.
+     - If the user enters `"n"`, reset the program by calling `calculator1()` for a new calculation.
+
+4. **Loop for Continued Calculation**:
+   - While `calculation_continue` is `True`, repeat the following:
+     - Display the available operations.
+     - Prompt the user to choose a new `operation`.
+     - Ask for the next number (`second_num`).
+     - Call the `calculator` function to perform the operation with the current result and `second_num`.
+
+5. **End Program**:
+   - If the user chooses not to continue (`calculation_continue = False`), the program ends.
+
