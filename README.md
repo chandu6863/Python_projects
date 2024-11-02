@@ -178,5 +178,44 @@
    - Start the game loop with `game=guessing(guess, other, i)`, allowing the player to continue guessing until they choose to stop.
 
 
+# PROJECT TITLE: Password Generator (Project Number: 6)
+
+## Algorithm
+
+1. **Define Character Pools**:
+   - Create lists of characters for different categories:
+     - `letters`: Contains lowercase alphabet characters from 'a' to 'z'.
+     - `symbols`: Includes special characters like `!`, `@`, `$`, `#`.
+     - `number`: Contains numeric characters from '0' to '9'.
+
+2. **Get User Input**:
+   - Prompt the user to input the desired number of letters, symbols, and numbers for the password:
+     - `n_letters`: The number of letters.
+     - `n_symbols`: The number of symbols.
+     - `n_numbers`: The number of numbers.
+
+3. **Generate Password Components**:
+   - Initialize an empty list `password_list` to store the characters of the password.
+
+   - **Add Letters**:
+     - Use a loop to randomly select `n_letters` characters from `letters`, adding each selected character to `password_list`.
+
+   - **Add Numbers**:
+     - Use a loop to randomly select `n_numbers` characters from `number`, adding each selected character to `password_list`.
+
+   - **Add Symbols**:
+     - Use a loop to randomly select `n_symbols` characters from `symbols`, adding each selected character to `password_list`.
+
+4. **Randomize Password Order**:
+   - Use `random.shuffle(password_list)` to randomize the order of the characters in `password_list`.
+
+5. **Convert to String**:
+   - Initialize an empty string `password`.
+   - Concatenate each character in `password_list` to `password`.
+
+6. **Display Password**:
+   - Print the generated password.
+
+
 
 
