@@ -217,5 +217,42 @@
    - Print the generated password.
 
 
+# PROJECT TITLE: Coffee Machine Simulation (Project Number: 7)
+
+## Algorithm:
+
+1. **Define Menu and Resources**:
+   - Define a `MENU` dictionary containing coffee options (espresso, latte, cappuccino), each with required ingredient quantities and cost.
+   - Define a `resources` dictionary with available amounts of `water`, `milk`, `coffee`, and `money`.
+
+2. **Start Coffee Machine**:
+   - Set a variable `machine` to `"on"` to keep the machine running.
+   - Enter a `while` loop that runs while `machine` is `"on"`.
+
+3. **Prompt User for Coffee Choice**:
+   - Ask the user to choose an option (`espresso`, `latte`, `cappuccino`, `report`, or `off`).
+   - If the choice is `"report"`, print current `resources`.
+   - If the choice is `"off"`, set `machine` to `"off"` to exit the loop.
+
+4. **Handle Coffee Selection**:
+   - Based on the user’s choice (`espresso`, `latte`, or `cappuccino`), retrieve the corresponding coffee configuration from `MENU` and pass it to the `compare` function along with `resources` and the selected coffee (`trail`).
+
+5. **Compare Resources** (`compare` function):
+   - Check if `resources` contain enough ingredients (`water`, `coffee`, and `milk`) to make the selected coffee.
+      - If all resources are sufficient, call the `coins_collector` function.
+      - If any resource is insufficient, print a message indicating the shortage and return to the main loop.
+
+6. **Collect Coins** (`coins_collector` function):
+   - Prompt the user to insert coins (`quarters`, `dimes`, `nickels`, `pennies`) and calculate the total `coins_collected`.
+   - If `coins_collected` is greater than or equal to the coffee’s cost:
+      - Calculate and display `change` (difference between `coins_collected` and coffee cost).
+      - Deduct required ingredients from `resources`.
+      - Add coffee’s cost to `resources["money"]`.
+      - Print a message confirming the transaction and providing the selected coffee to the user.
+   - If `coins_collected` is insufficient, display an error message and refund.
+
+7. **Loop Back or Exit**:
+   - The program loops back to allow the user to select another coffee option or turn off the machine.
+
 
 
