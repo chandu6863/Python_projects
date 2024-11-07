@@ -253,6 +253,41 @@
 
 7. **Loop Back or Exit**:
    - The program loops back to allow the user to select another coffee option or turn off the machine.
+  
+
+# Project Title: Quiz Game (Project Number: 9)
+
+## Overview
+This is a simple quiz game that reads questions from a data source, presents them one by one, and keeps track of the player's score based on correct answers.
+
+---
+
+## Algorithm
+
+1. **Import Modules and Classes**
+   - Import the `Question` class from `question_model`.
+   - Import `question_data` from `data`, which holds the question and answer data.
+   - Import the `QuizBrain` class from `quiz_brain` to manage the flow of the quiz.
+
+2. **Create Question Bank**
+   - Initialize an empty list called `question_bank` to store `Question` objects.
+   - For each dictionary in `question_data`:
+     - Retrieve the `text` and `answer` fields.
+     - Create a new `Question` object using the retrieved text and answer.
+     - Append the `Question` object to `question_bank`.
+
+3. **Initialize QuizBrain Object**
+   - Create an instance of `QuizBrain`, passing `question_bank` to initialize it with the question list.
+
+4. **Run Quiz**
+   - Start the quiz by calling `quiz.next_question()`, which:
+     - Presents each question in sequence.
+     - Accepts user input for each question.
+     - Checks if the user’s answer is correct and updates the score if it is.
+
+5. **End of Quiz**
+   - After all questions are asked, the program will display the final score and indicate the end of the quiz.
+
 
 
 
