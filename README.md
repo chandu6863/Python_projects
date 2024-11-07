@@ -253,7 +253,50 @@
 
 7. **Loop Back or Exit**:
    - The program loops back to allow the user to select another coffee option or turn off the machine.
-  
+
+  # Project Title: Coffee Machine(By using OOP's concept) (Project Number: 8)
+
+## Overview
+This Coffee Machine program simulates a coffee vending machine, allowing users to select a drink, process payments, and check resource availability.
+
+---
+
+## Algorithm
+
+1. **Import Modules and Classes**
+   - Import `MenuItem` and `Menu` from `menu`.
+   - Import `CoffeeMaker` from `coffee_maker`.
+   - Import `MoneyMachine` from `money_machine`.
+
+2. **Initialize Machine Components**
+   - Create an instance of `CoffeeMaker` called `coffee_machine` to manage coffee resources.
+   - Create an instance of `MoneyMachine` called `money_machine` to handle payment processing.
+   - Create an instance of `Menu` called `menu` to manage drink options.
+
+3. **Set Up Main Loop**
+   - Initialize a boolean variable `is_on` and set it to `True` to keep the machine running until the user chooses to stop.
+
+4. **User Input**
+   - Use a loop to continuously prompt the user for input:
+     - Retrieve the list of drink options from `menu.get_items()`.
+     - Ask the user to input their choice (e.g., coffee type or commands like "off" or "report").
+
+5. **Process User Input**
+   - If the user inputs "off":
+     - Set `is_on` to `False` to turn off the machine.
+   - If the user inputs "report":
+     - Call `coffee_machine.report()` to print available resources.
+     - Call `money_machine.report()` to print the current earnings.
+
+6. **Process Drink Order**
+   - If the user inputs a valid drink name:
+     - Find the drink using `menu.find_drink(order)`.
+     - Check if resources are sufficient using `coffee_machine.is_resource_sufficient(is_there)`.
+     - If resources are sufficient:
+       - Prompt for payment using `money_machine.make_payment(is_there.cost)`.
+       - If payment is successful, call `coffee_machine.make_coffee(is_there)` to make the drink.
+     - If payment fails, notify the user that funds are insufficient.
+   - If resources are insufficient, notify the user that the order can't be completed.
 
 # Project Title: Quiz Game (Project Number: 9)
 
