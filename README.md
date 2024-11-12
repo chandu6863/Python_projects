@@ -330,6 +330,48 @@ This is a simple quiz game that reads questions from a data source, presents the
 
 5. **End of Quiz**
    - After all questions are asked, the program will display the final score and indicate the end of the quiz.
+  
+
+# Project Title: Turtle Racing Game (Project Number: 10)
+
+This project is a fun, interactive turtle racing game using Python’s Turtle graphics library. Players can place bets on which colored turtle they think will win the race, and then watch to see if their chosen turtle reaches the finish line first.
+
+## Algorithm
+
+1. **Setup Game Environment**:
+   - Import required libraries (`turtle`, `random`) and create a screen for the game.
+   - Configure the screen dimensions to 500 pixels wide and 400 pixels high.
+
+2. **Get User's Bet**:
+   - Prompt the player to enter their bet on the turtle color they believe will win, using `textinput`.
+   - Store the player's input in a variable `win`.
+
+3. **Initialize Turtle Objects**:
+   - Define two lists:
+     - `colours`: A list of six colors for each turtle.
+     - `list1`: Contains y-coordinates to position each turtle in a unique starting lane.
+   - Use a loop to:
+     - Create six turtle objects, each with a color from the `colours` list.
+     - Set each turtle's shape to "turtle" and move each one to its starting position using `penup()` and `goto()`.
+     - Append each turtle object to the `all_turtles` list for easy reference.
+
+4. **Start Race**:
+   - If the player has made a bet, set `is_game_on` to `True` to start the race.
+
+5. **Race Simulation Loop**:
+   - Run a loop while `is_game_on` is `True`:
+     - For each turtle in `all_turtles`:
+       - Check if the turtle has crossed the finish line (x-coordinate > 230):
+         - If a turtle crosses the finish line, stop the game by setting `is_game_on` to `False`.
+         - Save the winning turtle’s color to `winning_colour`.
+         - Check if `winning_colour` matches the player's bet:
+           - If they match, display a message indicating the player won.
+           - If they don’t match, display a message indicating the player lost.
+         - Exit the loop to end the race.
+       - If no turtle has crossed the finish line, move each turtle a random distance between 0 and 10 pixels.
+
+6. **Exit on Click**:
+   - Keep the turtle graphics window open until the player clicks on the screen to close it.
 
 
 
