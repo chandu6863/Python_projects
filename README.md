@@ -1,4 +1,4 @@
-# Python_projects :10
+# Python_projects :11
 # PROJECT TITLE: Caesar Cipher (Project Number: 1)
 
 ## Algorithm
@@ -374,5 +374,76 @@ This project is a fun, interactive turtle racing game using Python’s Turtle gr
    - Keep the turtle graphics window open until the player clicks on the screen to close it.
 
 
+
+# Project Title:Snake Game (Project Number : 11)
+
+## Project Overview
+This project implements a classic **Snake Game** using Python's `turtle` module. The game includes a moving snake, randomly generated food, and a scoring system. The player controls the snake to eat food, grow in length, and avoid collisions with the walls or itself.
+
+---
+
+## Algorithm
+
+ 1. **Initialize the Game**
+   - Import necessary modules (`Turtle`, `Screen`, `time`, and custom classes: `Food`, `Snake`, and `Score`).
+   - Set up the screen:
+     - Background color: black.
+     - Dimensions: 600x600 pixels.
+     - Title: "Snake Game".
+     - Use `screen.tracer(0)` to turn off automatic screen updates for smoother animations.
+   - Create instances of:
+     - `Snake` for the snake's movement.
+     - `Food` to generate random food positions.
+     - `Score` to manage the score display.
+
+
+
+ 2. **Setup User Controls**
+   - Use `screen.listen()` to capture keyboard events.
+   - Map the `Up`, `Down`, `Left`, and `Right` keys to the snake's movement methods (`snake.up`, `snake.down`, `snake.left`, `snake.right`).
+
+---
+
+ 3. **Main Game Loop**
+   - Start the game loop with a `while` loop controlled by a `is_game_on` flag.
+   - Inside the loop:
+     - Call `screen.update()` to refresh the screen.
+     - Pause for a short time using `time.sleep(0.1)` to control the speed of the snake.
+
+ **Logic within the Loop**
+1. **Move the Snake**:
+   - Call `snake.move()` to move all segments of the snake.
+
+2. **Detect Food Collision**:
+   - Check if the snake's head is within 14 units of the food using `snake.head_snake.distance(food)`.
+   - If true:
+     - Call `food.another_food()` to relocate the food.
+     - Call `snake.extend()` to add a new segment to the snake.
+     - Update the score using `scoreboard.score_increase()`.
+
+3. **Detect Wall Collision**:
+   - Check if the snake's head exceeds the screen's boundaries (±290 units).
+   - If true:
+     - Set `is_game_on` to `False`.
+     - Display "Game Over" using `scoreboard.game_over()`.
+
+4. **Detect Self-Collision**:
+   - Iterate through all snake segments except the head.
+   - Check if the head's distance to any segment is less than 10 units.
+   - If true:
+     - Set `is_game_on` to `False`.
+     - Display "Game Over" using `scoreboard.game_over()`.
+
+---
+
+ 4. **Exit the Game**
+   - Use `screen.exitonclick()` to wait for the user to click before closing the screen.
+
+---
+
+## File Structure
+- **`snake.py`**: Contains the `Snake` class for managing the snake's creation, movement, and growth.
+- **`food.py`**: Contains the `Food` class for generating food at random positions.
+- **`score.py`**: Contains the `Score` class for tracking and displaying the score.
 
 
