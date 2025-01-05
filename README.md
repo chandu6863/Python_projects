@@ -1,4 +1,4 @@
-# Python_projects :11
+# Python_projects :12
 # PROJECT TITLE: Caesar Cipher (Project Number: 1)
 
 ## Algorithm
@@ -445,5 +445,82 @@ This project implements a classic **Snake Game** using Python's `turtle` module.
 - **`snake.py`**: Contains the `Snake` class for managing the snake's creation, movement, and growth.
 - **`food.py`**: Contains the `Food` class for generating food at random positions.
 - **`score.py`**: Contains the `Score` class for tracking and displaying the score.
+
+
+
+# PROJECT TITLE: Pong Game (Project Number: 12)
+
+# Overview
+
+The provided code implements a basic **Pong Game** using Python's `turtle` module. It creates an interactive game with paddles, a ball, and a scoring system. The game features:
+- Two paddles controlled by the user via keyboard inputs.
+- A ball that bounces off walls, paddles, and resets when missed.
+- A scoring mechanism to track each player's points.
+- A graphical interface with smooth motion and collision detection.
+
+
+---
+
+# Algorithm
+
+## 1. **Setup**
+   - **Step 1.1:** Import necessary modules: `time`, `Screen`, `Ball`, `Paddle`, and `Score`.
+   - **Step 1.2:** Initialize the screen:
+     - Set title as `"PONG GAME"`.
+     - Set dimensions: `800x600 pixels`.
+     - Set background color to black.
+     - Disable automatic updates using `tracer(0)` to manually control rendering.
+
+## 2. **Create Game Objects**
+   - **Step 2.1:** Create the paddles:
+     - Right paddle at `(350, 0)`.
+     - Left paddle at `(-350, 0)`.
+   - **Step 2.2:** Create score objects:
+     - Right score tracker at `(100, 200)`.
+     - Left score tracker at `(-100, 200)`.
+   - **Step 2.3:** Create a ball object for movement and collision.
+
+## 3. **Define Controls**
+   - **Step 3.1:** Set key bindings for right paddle:
+     - Move up with the "Up" arrow key.
+     - Move down with the "Down" arrow key.
+   - **Step 3.2:** Set key bindings for left paddle:
+     - Move up with the "W" key.
+     - Move down with the "S" key.
+
+## 4. **Game Loop**
+   - **Step 4.1:** Start the game loop (`while game_on`):
+     - Pause execution using `time.sleep()` based on the ball's speed.
+     - Update the screen with `screen.update()`.
+
+   ### 4.2. Ball Movement
+   - Move the ball using its `mov()` method.
+
+   ### 4.3. Detect Wall Collisions
+   - If the ball's vertical position (`ycor`) exceeds `280` or is less than `-280`:
+     - Reverse the ball's vertical direction with `bounce_y()`.
+
+   ### 4.4. Detect Paddle Collisions
+   - Check proximity between the ball and each paddle:
+     - For the right paddle:
+       - If the ball's distance from the paddle is less than `50` and its horizontal position (`xcor`) exceeds `320`, reverse its direction using `bounce_x()`.
+     - For the left paddle:
+       - If the ball's distance from the paddle is less than `50` and its horizontal position (`xcor`) is less than `-340`, reverse its direction using `bounce_x()`.
+
+   ### 4.5. Detect Missed Ball
+   - **Step 4.5.1:** Detect right paddle miss:
+     - If the ball's horizontal position (`xcor`) exceeds `380`:
+       - Reset the ball to the center using `centre()`.
+       - Increment the left player's score with `l_point()`.
+   - **Step 4.5.2:** Detect left paddle miss:
+     - If the ball's horizontal position (`xcor`) is less than `-380`:
+       - Reset the ball to the center using `centre()`.
+       - Increment the right player's score with `r_point()`.
+
+## 5. **End Game**
+   - Exit the game loop upon user termination and close the screen with `screen.exitonclick()`.
+
+---
+
 
 
