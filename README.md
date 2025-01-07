@@ -1,4 +1,4 @@
-# Python_projects :12
+# Python_projects :13
 # PROJECT TITLE: Caesar Cipher (Project Number: 1)
 
 ## Algorithm
@@ -519,6 +519,76 @@ The provided code implements a basic **Pong Game** using Python's `turtle` modul
 
 ## 5. **End Game**
    - Exit the game loop upon user termination and close the screen with `screen.exitonclick()`.
+
+---
+
+
+# PROJECT TITLE: Turtle Cross Game (Project Number: 13)
+
+## Introduction
+
+The Turtle Cross game involves a player controlling a turtle that tries to cross a road filled with moving cars. The goal is to reach the other side without colliding with any cars. The game gets progressively harder as the player progresses.
+
+---
+
+## Steps in the Algorithm
+
+### 1. **Initialize Game Components**
+
+- Import required modules (`time`, `Screen`, and custom classes `Player`, `CarManager`, `Scoreboard`).
+- Create instances for:
+  - `Player` to represent the turtle.
+  - `CarManager` to handle car creation and movement.
+  - `Scoreboard` to display the player's score.
+
+### 2. **Set Up Screen**
+
+- Create a `Screen` instance:
+  - Set the title to "Turtle Cross."
+  - Configure the dimensions (`600x600`) and background color (`black`).
+  - Disable automatic updates using `screen.tracer(0)`.
+- Enable key listeners to move the player using the "Up" arrow key.
+
+### 3. **Start Game Loop**
+
+- Initialize `game_is_on` to `True`.
+- Run the game loop as long as `game_is_on` is `True`:
+
+#### Inside the Loop:
+
+1. **Update Screen and Pause:**
+
+   - Pause the loop briefly using `time.sleep(0.1)` to control game speed.
+   - Update the screen.
+
+2. **Display Score:**
+
+   - Update the scorecard using `score.scorecard()`.
+
+3. **Manage Cars:**
+
+   - Create new cars with `car.create_cars()`.
+   - Move all cars forward with `car.move_cars()`.
+
+4. **Detect Collisions:**
+
+   - Loop through all cars in `car.all_cars`.
+   - Check if the distance between the player and a car is less than 15 units.
+   - If a collision is detected:
+     - End the game by setting `game_is_on` to `False`.
+     - Trigger the `player.lost()` method to display a losing message or effect.
+
+5. **Check Win Condition:**
+
+   - Check if the player has reached the other side of the screen using `player.reach()`.
+   - If the player wins:
+     - Reset the player's position to the starting point using `player.go_to_start()`.
+     - Increase car movement speed with `car.movement_increase()`.
+     - Clear the previous score and increment the level using `score.clear()` and `score.lvl_increament()`.
+
+### 4. **End Game**
+
+- Exit the game when the loop ends by calling `screen.exitonclick()`.
 
 ---
 
