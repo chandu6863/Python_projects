@@ -1,4 +1,4 @@
-# Python_projects :13
+# Python_projects :14
 # PROJECT TITLE: Caesar Cipher (Project Number: 1)
 
 ## Algorithm
@@ -593,4 +593,55 @@ The Turtle Cross game involves a player controlling a turtle that tries to cross
 ---
 
 
+# **PROJECT TITLE: Mile to Kilometer Converter (Project Number: 14)**  
+
+---
+
+## **Introduction:**  
+This project is a **Graphical User Interface (GUI) application** built using **Tkinter** in Python. The purpose of this application is to convert miles to kilometers using the formula:  
+
+
+The user enters a value in miles, and upon clicking the **"Calculate"** button, the corresponding distance in kilometers is displayed. This project provides a simple and user-friendly way to perform unit conversions.
+
+---
+
+## **Algorithm:**  
+
+1. **Import the necessary module**  
+   - Import `Tkinter` using `from tkinter import *`.
+
+2. **Create the main application window**  
+   - Initialize the window using `Tk()`.  
+   - Set the title as `"CONVERTER"`.  
+   - Set the minimum window size using `window.minsize(width=500, height=300)`.  
+   - Configure padding using `window.config(padx=20, pady=20)`.  
+
+3. **Create an input box for user input**  
+   - Use `Entry()` to take the user's input (miles).  
+   - Position the input box at `(column=1, row=0)`.  
+
+4. **Add labels for user guidance**  
+   - **Label1:** `"Mile"` at `(column=2, row=0)`.  
+   - **Label2:** `"is equal to"` at `(column=0, row=1)`.  
+   - **Label3:** `"Km"` at `(column=2, row=1)`.  
+
+5. **Define the conversion function (`clicked`)**  
+   - Retrieve the value from the input box.  
+   - Convert the miles to kilometers using the formula:  
+     ```
+     Kilometers = Miles × 1.609344
+     ```
+   - Round the result.  
+   - Display the result using a new `Label()` at `(column=1, row=1)`.  
+
+6. **Create a button to trigger the conversion**  
+   - Use `Button()` labeled `"Calculate"`.  
+   - Attach the `clicked()` function to the button.  
+   - Place the button at `(column=1, row=2)`.  
+
+7. **Run the main event loop**  
+   - Call `window.mainloop()` to keep the application running.  
+
+---
+ 
 
