@@ -1,4 +1,4 @@
-# Python_projects :14
+# Python_projects :15
 # PROJECT TITLE: Caesar Cipher (Project Number: 1)
 
 ## Algorithm
@@ -644,4 +644,56 @@ The user enters a value in miles, and upon clicking the **"Calculate"** button, 
 
 ---
  
+# **PROJECT TITLE: Pomodoro Timer (Project Number: 15)**  
+
+---
+
+## **Introduction:**  
+This project is a **Pomodoro Timer** built using **Tkinter** in Python. It follows the Pomodoro technique, which consists of **work sessions** followed by **short breaks**, and a **long break** after multiple sessions. The timer automatically switches between these intervals to enhance productivity.  
+
+The application displays a **visual timer**, a **start button**, and a **reset button**, along with checkmarks (`✔`) to indicate completed work sessions.  
+
+---
+
+## **Algorithm:**  
+
+### **1. Import Required Modules**  
+   - Import `math` for calculations.  
+   - Import `Tkinter` for GUI creation.  
+
+### **2. Define Constants**  
+   - Define colors (`PINK`, `RED`, `GREEN`, `YELLOW`).  
+   - Set font (`FONT_NAME = "Courier"`).  
+   - Define timer durations:  
+     ```
+     WORK_MIN = 25  
+     SHORT_BREAK_MIN = 5  
+     LONG_BREAK_MIN = 20  
+     ```
+   - Initialize `reps` (number of repetitions).  
+   - Create a variable `timer` to store the countdown event.  
+
+---
+
+### **3. Create Timer Reset Function (`reset_timer`)**  
+   - Reset the text to **"Timer"**.  
+   - Cancel the running `after()` function to stop the countdown.  
+   - Reset the **timer display** to `"00:00"`.  
+   - Clear the checkmarks (`✔`).  
+   - Reset `reps` to `0`.  
+
+---
+
+### **4. Start Timer Mechanism (`start_timer`)**  
+   - Increment the `reps` counter.  
+   - Convert minutes to seconds for **work, short break, and long break**.  
+   - Decide the next session based on `reps`:  
+     - **Odd `reps` (Work session):**  
+       - Display `"Work"` in **green**.  
+       - Start countdown for **work duration**.  
+     - **8th rep (Long Break):**  
+       - Display `"Break"` in **red**.  
+       - Start countdown for **long break**.  
+     - **Even `reps` (Short Break):**  
+       - Display `"Break"` in 
 
