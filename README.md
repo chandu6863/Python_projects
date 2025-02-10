@@ -1,4 +1,4 @@
-# Python_projects :15
+# Python_projects :16
 # PROJECT TITLE: Caesar Cipher (Project Number: 1)
 
 ## Algorithm
@@ -696,4 +696,74 @@ The application displays a **visual timer**, a **start button**, and a **reset b
        - Start countdown for **long break**.  
      - **Even `reps` (Short Break):**  
        - Display `"Break"` in 
+
+
+# **PROJECT TITLE: Flashcard App (Project Number: 16)**  
+
+---
+
+## **Introduction:**  
+This project is a **Flashcard App** built using **Tkinter** for the graphical user interface and **Pandas** for reading and updating data. The app helps users learn new words in **French and English** by displaying flashcards with translations.  
+
+The app displays a **front card** with a **French word**, which flips after 3 seconds to show the **English translation** on the back. Users can mark words as known, and the app removes them from the learning list for future sessions.  
+
+---
+
+## **Algorithm:**  
+
+### **1. Import Required Modules**  
+   - Import `tkinter` for GUI creation.  
+   - Import `pandas` for reading and updating CSV data.  
+   - Import `random` to randomly select words from the word list.  
+
+---
+
+### **2. Initialize Variables and Load Data**  
+   - Define `BACKGROUND_COLOR` as `#B1DDC6`.  
+   - Initialize `to_listen` as an empty dictionary.  
+   - Create `current_card` to store the current word pair.  
+   - Define `flip_timer` to manage the card flip delay.  
+   - Try to load the saved word list (`data/word_to_listen.csv`):  
+     - If the file is not found, load the original list from `data/french_words.csv`.  
+   - Convert the data into a list of dictionaries for easy access.  
+
+---
+
+### **3. Word Change Function (`word_change`)**  
+   - Cancel any existing flip timer.  
+   - Randomly select a new word from the list and update `current_card`.  
+   - Configure the canvas to display:  
+     - **French word** on the front card.  
+     - Set the text color to black.  
+   - Set a 3-second timer to call `flip_card`.  
+
+---
+
+### **4. Flip Card Function (`flip_card`)**  
+   - Change the card to display the **English translation** from `current_card`.  
+   - Update the text color to white.  
+   - Change the background image to the back of the card (`card_back.png`).  
+
+---
+
+### **5. Remove Known Word (`is_known`)**  
+   - Remove the current word from `to_listen`.  
+   - Save the updated list back to `data/word_to_listen.csv`.  
+   - Call `word_change` to display a new word.  
+
+---
+
+### **6. Setup User Interface (`Tkinter` Configuration)**  
+   - **Main Window (`Tk`)**:  
+     - Set title as **"Flashy"**.  
+     - Add padding and set background color to `BACKGROUND_COLOR`.  
+   - **Canvas for Flashcards**:  
+     - Display front and back card images.  
+     - Add two text elements for the **title** (language) and **word**.  
+   - **Buttons**:  
+     - **Right Button (`is_known`)**: Marks the current word as known and moves to the next word.  
+     - **Wrong Button (`word_change`)**: Displays a new word without removing it from the list.  
+   - **Timer (`after`)**: Automatically flips the card after 3 seconds.  
+
+---
 
